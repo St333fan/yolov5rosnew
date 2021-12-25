@@ -120,7 +120,7 @@ class subscriber:
         s = np.stack([letterbox(x, self.imgsz, stride=self.stride)[0].shape for x in img], 0)  # shapes
         rect = np.unique(s, axis=0).shape[0] == 1  # rect inference if all shapes equal
         if not rect:
-            print('WARNING: Different stream shapes detected. For optimal performance supply similarly-shaped stre>
+            print('WARNING: Different stream shapes detected. For optimal performance supply similarly-shaped streams.')
 
         # Letterbox
         img0 = img.copy()
