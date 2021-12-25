@@ -47,7 +47,7 @@ from models.experimental import attempt_load
 from utils.general import (check_file, check_img_size, check_imshow, check_requirements, colorstr,
                            increment_path, set_logging, non_max_suppression, scale_coords)
 
-from utils.torch_utils import select_device, time_sync
+from utils.torch_utils import select_device
 
 bridge = CvBridge()
 
@@ -143,7 +143,6 @@ class subscriber:
 
         print("Shape:", img.shape)
         # Inference
-        t1 = time_sync()
         pred = self.model(img,
                           augment=self.augment,
                           visualize=increment_path( ROOT / 'data/images' / 'features', mkdir=True) if self.visualize else False)[0]
@@ -151,7 +150,6 @@ class subscriber:
         # Apply NMS
         pred = non_max_suppression(pred, self.conf_thres, self.iou_thres, self.classes, self.agnostic_nms,
                                    max_det=self.max_det)
-        t2 = time_sync()
 
         # Apply Classifier
         if self.classify:
