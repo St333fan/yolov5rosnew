@@ -46,7 +46,7 @@ from models.experimental import attempt_load
 #from utils.datasets import IMG_FORMATS, VID_FORMATS, LoadImages, LoadStreams
 from utils.general import (check_file, check_img_size, check_imshow, check_requirements, colorstr,
                            increment_path, set_logging, non_max_suppression, scale_coords)
-from utils.plots import Annotator, colors, save_one_box
+
 from utils.torch_utils import select_device, time_sync
 
 bridge = CvBridge()
