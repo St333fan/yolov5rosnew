@@ -146,7 +146,7 @@ class subscriber:
         t1 = time_sync()
         pred = self.model(img,
                           augment=self.augment,
-                          visualize=increment_path( ROOT / 'data/images' / 'features', mkdir=True) if self.visuali>
+                          visualize=increment_path( ROOT / 'data/images' / 'features', mkdir=True) if self.visualize else False)[0]
 
         # Apply NMS
         pred = non_max_suppression(pred, self.conf_thres, self.iou_thres, self.classes, self.agnostic_nms,
