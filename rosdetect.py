@@ -44,7 +44,7 @@ ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 from models.experimental import attempt_load
 #from models.common import DetectMultiBackend
 #from utils.datasets import IMG_FORMATS, VID_FORMATS, LoadImages, LoadStreams
-from utils.general import (LOGGER, check_file, check_img_size, check_imshow, check_requirements, colorstr,
+from utils.general import (check_file, check_img_size, check_imshow, check_requirements, colorstr,
                            increment_path, set_logging, non_max_suppression, print_args, scale_coords, strip_optim)
 from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import select_device, time_sync
