@@ -100,7 +100,7 @@ class subscriber:
         self.classify = False
         if self.classify:
             self.modelc = load_classifier(name='resnet50', n=2)  # initialize
-            self.modelc.load_state_dict(torch.load('resnet50.pt', map_location=self.device)['model']).to(self.devi>
+            self.modelc.load_state_dict(torch.load('resnet50.pt', map_location=self.device)['model']).to(self.device).eval()
 
         # Dataloader
         #view_img = check_imshow()
