@@ -110,7 +110,7 @@ class subscriber:
         if self.device.type != 'cpu':
             self.model(torch.zeros(1, 3, imgsz, imgsz).to(self.device).type_as(next(model.parameters())))  # run o>
 
-        self.sub = rospy.Subscriber("/rgb/image_raw", Image, self.callback)
+        self.sub = rospy.Subscriber("/video_frames", Image, self.callback)
 
     def callback(self, data):
         t0 = time.time()
